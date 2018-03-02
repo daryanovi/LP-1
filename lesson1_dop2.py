@@ -13,24 +13,19 @@ students = [
 # Вася: 1
 # Маша: 2
 # Петя: 2
-y=0
-sort=students[y].get('first_name')
-print(sort)
+
+sort_list=[]
 for x in students:
-	if x.get('first_name')==sort :
-		y=y+1
-		sort=x.get('first_name')
-		print(sort)
-		print(y)
-
-
-	print(x.get('first_name'),y)
-		
-
-
+	sort_var=x.get('first_name')
+	sort_list.append(sort_var)
+count=Counter(sort_list)
+for y in count:
+	b="# {}: {}".format(y, count[y])
+	print(b)
 
 # Задание 2
 # Дан список учеников, нужно вывести самое часто повторящееся имя.
+
 students = [
 	{'first_name': 'Вася'},
 	{'first_name': 'Петя'},
