@@ -95,7 +95,7 @@ is_male = {
 # В классе 2a 2 девочки и 0 мальчика.
 # В классе 3c 0 девочки и 2 мальчика.
 
-count_gender=[]
+
 for x in school:
 	female=0
 	male=0
@@ -109,7 +109,6 @@ for x in school:
 					male=male+1
 				else:
 					female=female+1
-	count_gender.append()
 	print("В классе {} учатся {} мальчиков и {} девочек.".format(class_num, male, female))
 
 
@@ -130,6 +129,10 @@ is_male = {
 # Пример вывода:
 # Больше всего мальчиков в классе 3c
 # Больше всего девочек в классе 2a
+count_gender=[]
+count_male=[]
+count_female=[]
+class_gender=[]
 
 for x in school:
 	female=0
@@ -144,5 +147,13 @@ for x in school:
 					male=male+1
 				else:
 					female=female+1
-	print("В классе {} учатся {} больше всего мальчиков и {} девочек.".format(class_num, male, female))
+	class_gender.append(class_num)
+	count_male.append(male)
+	count_female.append(female)
+
+class_num_male=class_gender[count_male.index(max(count_male))]
+class_num_female=class_gender[count_female.index(max(count_female))]
+
+print("""В классе {} учатся больше всего мальчиков.
+В классе {} учится больше всего девочек.""".format(class_num_male, class_num_female))
 
